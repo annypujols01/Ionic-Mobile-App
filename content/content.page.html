@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Content</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <div *ngIf="content">
+    <h2 *ngIf="content.title">{{ content.title }}</h2>
+    <p>{{ content.text }}</p>
+    <ion-img *ngIf="content.image" [src]="content.image"></ion-img>
+    <p>Page {{ content.id }}</p>
+  </div>
+  <ion-button *ngIf="content?.id > 1" [routerLink]="['/content', content.id - 1]" color="warning">Previous</ion-button>
+  <ion-button *ngIf="content?.id < totalPages" [routerLink]="['/content', content.id + 1]" color="danger">Next</ion-button>
+  <ion-button expand="full" routerLink="/toc" color="dark">Back to TOC</ion-button>
+</ion-content>

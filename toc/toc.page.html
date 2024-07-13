@@ -1,0 +1,20 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>toc</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-list>
+    <ion-item *ngFor="let chapter of chapters" [routerLink]="['/content', chapter.id]">
+      {{ chapter.title }}
+      
+    </ion-item>
+  </ion-list>
+  <ion-button expand="full" routerLink="/content/1" color="success">First Content Page</ion-button>
+  <ion-button expand="full" routerLink="/cover" color="dark">Back to Cover</ion-button>
+
+  <img src="https://picsum.photos/seed/picsum/200/300" width="400"/>
+
+
+</ion-content>
